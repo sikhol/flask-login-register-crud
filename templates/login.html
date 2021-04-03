@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block body %}
+<body>
+<div class="app app-login">
+    <div class="row h-100 overflow-hidden m-0">
+        <div class="col-md-auto px-5 py-4 p-md-5">
+            <a href="#" class="logo"><img src="{{url_for('static', filename = 'assets/images/Logo.svg')}}" alt=""></a>
+        </div>
+
+        <div class="col-md-4 align-self-end p-5 ml-md-auto">
+             {% for message in get_flashed_messages() %}
+                    <p>{{ message }}</p>
+            {% endfor %}
+            {% from "includes/formhelpers.html" import render_field %}
+            <form class="form mb-md-5" method="POST" >
+                <div class="form-group">
+                    {{ render_field(form.username, class="form-control" ,placeholder="username") }}
+
+                </div>
+                <div class="form-group">
+                    {{ render_field(form.password, class="form-control", placeholder="password") }}
+
+                </div>
+                <div class="form-group row">
+                    <div class="col">
+                        <div class="form-check font-weight-normal">
+                            <input class="form-check-input" type="checkbox" value="" id="remember-me">
+                            <label class="form-check-label" for="remember-me">
+                                Ingat saya
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-auto font-weight-normal">
+                        <a href="#" class="text-dark">Lupa Password <img src="assets/images/icon/ic-lupa-password.svg" alt="" class="ml-2"></a>
+                    </div>
+                </div>
+                <div class="form-group row mx-n2">
+                    <div class="col px-2">
+                        <button  class="btn btn-accent btn-block rounded-pill py-2" type="submit">Login</button>
+                    </div>
+                    <div class="col px-2">
+                        <a href="{{ url_for('.register') }}"><button type="button"  class="btn btn-second btn-block rounded-pill py-2">Daftar</button></a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+ {% endblock body %}

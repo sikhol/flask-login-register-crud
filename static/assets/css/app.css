@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
+@import url('../fonts/sofia-pro/font.css');
+
+:root{
+    --accent-color:#00AEEF;
+    --accent-hover-color:#0099C5;
+    --second-color:#D4D4D4;
+    --second-hover-color:#c4c4c4;
+    --action-color:#EF8F00;
+    --action-hover-color:#BE7C00;
+}
+*,
+*:after,
+*::before {
+    box-sizing: border-box;
+    margin:0px;
+    padding:0px;
+}
+html{
+    font-size:14px;
+}
+body{
+    background: #fff;
+    font-family: 'SofiaPro', sans-serif;
+    color:#808285;
+}
+a{
+    color:var(--accent-color);
+}
+/* GENERAL */
+.bg-none{
+    background:none;
+}
+.bg-accent{
+    background-color:var(--accent-color);
+}
+.bg-second{
+    background-color:var(--accent-color);
+}
+.bg-action{
+    background-color:var(--action-color);
+}
+.text-accent{
+    color:var(--accent-color);
+}
+.text-action{
+    color:var(--action-color);
+}
+.text-second{
+    color:var(--action-color);
+}
+.object-fit-cover{
+    object-fit: cover;
+}
+.object-fit-contain{
+    object-fit: contain;
+}
+/* BUTTON */
+.btn-fab{
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    padding:0;
+    border-radius: 50%;
+}
+.btn-accent{
+    background: var(--accent-color);
+    border-color:transparent!important;
+    color:#fff;
+}
+.btn-accent:hover{
+    background: var(--accent-hover-color);
+    border-color:transparent!important;
+    color:#fff;
+}
+.btn-second{
+    background: var(--second-color);
+    border-color:transparent!important;
+    color:#fff;
+}
+.btn-second:hover{
+    background: var(--second-hover-color);
+    border-color:transparent!important;
+    color:#fff;
+}
+.btn-action{
+    background: var(--action-color);
+    border-color:transparent!important;
+    color:#fff;
+}
+.btn-action:hover{
+    background: var(--action-hover-color);
+    border-color:transparent!important;
+    color:#fff;
+}
+/* FORM */
+.form-control{
+    background:rgba(229, 229, 229, 0.3);
+    border:1px solid #D5D5D5;
+    height:60px;
+    padding:10px 10px 10px 25px;
+    border-radius: 100px;
+}
+/* TABLE */
+table td{
+    color:#808285;
+    font-weight: normal;
+    border-color:1px solid rgba(128, 130, 133, 0.3)!important;
+}
+/* LAYOUT */
+.app.app-login{
+    display: grid;
+    min-height: 100vh;
+    width: 100vw;
+}
+
+/* SOUND ITEM */
+.sound-item{
+    position: relative;
+    display: block;
+}
+.sound-item input{
+    position: absolute;
+    visibility: hidden;
+}
+.card-sound-item{
+    display: flex;
+    border: 1px solid rgba(128, 130, 133, 0.4);
+    border-radius: 100px;
+    overflow: hidden;
+    align-items: center;
+    padding:5px;
+}
+.card-sound-item.active{
+    border: 1px solid #00AEEF;
+    background:rgba(0, 174, 239, 0.1);
+    color:var(--accent-color);
+}
+.card-sound-item .icon{
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    border-radius: 5px;
+    background: #808285;
+    text-align: center;
+    margin: 0 10px;
+}
+.card-sound-item .icon img{
+    width: 10px;
+    height: 10px;
+    object-fit: contain;
+}
+.card-sound-item.active .icon{
+    background: var(--accent-color);
+}
+.card-sound-item .sound-graph{
+    margin-left: auto;
+}
+.row-sound-item button{
+
+}
+/* RESPONSIVE */
+@media (max-width: 768px){
+    
+    
+}
+@media (max-width: 480px){
+    .logo img{
+        height: 100px
+    }
+    
+}

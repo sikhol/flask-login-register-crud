@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% block body %}
+<body>
+<div class="app app-login">
+    <div class="row h-500 overflow-hidden m-0">
+        <div class="col-md-auto px-5 py-4 p-md-5">
+            <a href="#" class="logo"><img src="{{url_for('static', filename = 'assets/images/Logo.svg')}}" alt=""></a>
+        </div>
+
+        <div class="col-md-5 align-self-end p-5 ml-md-auto">
+             {% for message in get_flashed_messages() %}
+                    <p>{{ message }}</p>
+            {% endfor %}
+            {% from "includes/formhelpers.html" import render_field %}
+            <form class="form mb-md-8" method="POST" >
+                <div class="form-group">
+                    {{ render_field(form.name, class="form-control" ,placeholder="name") }}
+
+                </div>
+                <div class="form-group">
+                    {{ render_field(form.email, class="form-control", placeholder="email") }}
+
+                </div>
+                <div class="form-group">
+                    {{ render_field(form.username, class="form-control" ,placeholder="username") }}
+
+                </div>
+                <div class="form-group">
+                    {{ render_field(form.password, class="form-control", placeholder="password") }}
+
+                </div>
+                <div class="form-group">
+                    {{ render_field(form.phone, class="form-control", placeholder="phone number") }}
+
+                </div>
+                <div class="form-group">
+                    {{ render_field(form.domisili, class="form-control" ,placeholder="domisili") }}
+
+                </div>
+                <div class="form-group">
+                    {{ render_field(form.industry, class="form-control", placeholder="industry") }}
+
+                </div>
+                <div class="form-group">
+                    <select name="type_akun" class="form-control" >
+                        <option>-</option>
+                        <option value="demo">Demo</option>
+                        <option value="berbayar">Berbayar</option>
+
+                    </select>
+
+                </div>
+                <div class="form-group row">
+<!--                    <div class="col">-->
+<!--                        <div class="form-check font-weight-normal">-->
+<!--                            <input class="form-check-input" type="checkbox" value="" id="remember-me">-->
+<!--                            <label class="form-check-label" for="remember-me">-->
+<!--                                Ingat saya-->
+<!--                            </label>-->
+<!--                        </div>-->
+<!--                    </div>-->
+    <!--                    <div class="col-auto font-weight-normal">-->
+    <!--                        <a href="#" class="text-dark">Lupa Password <img src="assets/images/icon/ic-lupa-password.svg" alt="" class="ml-2"></a>-->
+    <!--                    </div>-->
+                </div>
+                <div class="form-group row mx-n2">
+<!--                    <div class="col px-2">-->
+<!--                        <button  class="btn btn-accent btn-block rounded-pill py-2 disabled" type="submit">Login</button>-->
+<!--                    </div>-->
+                    <div class="col px-">
+                        <button type="submit" class="btn btn-accent btn-block rounded-pill py-2">Daftar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+ {% endblock body %}

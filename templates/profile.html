@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+<body>
+<div class="container">
+
+    <div class="col-md px-3 py-4 p-md-3">
+            <div class="heading row align-items-center mt-lg-3 mb-4">
+                <div class="col-md mb-4 mb-md-0">
+
+                    <h2 class="m-0">Profile, {{session['username']}}</h2>
+                </div>
+                {% for message in get_flashed_messages() %}
+                    <p>{{ message }}</p>
+                {% endfor %}
+
+                <div class="col-md-auto">
+        <a href="{{url_for('.result')}}" class="btn btn-action py-2 px-5 rounded-pill" style="background-color:var(--accent-hover-color)">
+          <span class="glyphicon glyphicon-chevron-left"></span> Back
+        </a>
+                </div>
+            </div>
+  <form action="" method="POST">
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" class="form-control" id="email"  name="email" value="{{profile.email}}">
+    </div>
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" class="form-control" id="name"  name="name" value="{{profile.name}}">
+    </div>
+      <div class="form-group">
+      <label for="username">Username:</label>
+      <input type="text" class="form-control" id="username"  name="username" value="{{profile.username}}">
+    </div>
+      <div class="form-group">
+      <label for="phone">Phone:</label>
+      <input type="text" class="form-control" id="phone"  name="phone" value="{{profile.phone}}">
+    </div>
+      <div class="form-group">
+      <label for="domisili">Domisili:</label>
+      <input type="text" class="form-control" id="domisili"  name="domisili" value="{{profile.domisili}}">
+    </div>
+      <div class="form-group">
+      <label for="industry">Industry:</label>
+      <input type="text" class="form-control" id="industry"  name="industry" value="{{profile.industry}}">
+    </div>
+      <div class="form-group">
+      <label for="type_akun">Type Account:</label>
+          {% if profile.upgrade_status == 0 %}
+
+          <button type="button" id="type_akun" class="btn btn-accent py-3 btn-block rounded-pill col col-md-2" style="background-color:#58BCC1">Demo</button>
+          {% else %}
+            <button type="button" class="btn  py-3 btn-block rounded-pill col col-md-2" disabled>Berbayar</button>
+          {% endif %}
+    </div>
+      <div class="form-group">
+      <label for="password">Password:</label>
+      <input type="password" class="form-control" id="password" placeholder="*******" name="password"   >
+    </div>
+
+    <button type="submit" class="btn btn-accent py-3 btn-block rounded-pill col col-md-2">Submit</button>
+  </form>
+</div>
+</div>
+
+</body>
+ {% endblock body %}

@@ -1,0 +1,80 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--        <meta charset="utf-8">-->
+<!--        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">-->
+<!--        <meta name="description" content="">-->
+<!--        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no" />-->
+<!--        <title>Arvo</title>-->
+<!--        <link rel="shortcut icon" href="{{url_for('static', filename = 'assets/images/favicon.png')}}">-->
+
+<!--        &lt;!&ndash; CSS &ndash;&gt;-->
+<!--        <link rel="stylesheet" href="{{url_for('static', filename = 'assets/css/bootstrap.min.css')}}">-->
+<!--        <link href="{{url_for('static', filename = 'assets/plugins/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet">-->
+<!--        <link href="{{url_for('static', filename = 'assets/plugins/feather-icons/feather.css')}}" rel="stylesheet">-->
+<!--        <link rel="stylesheet" type="text/css" href="{{url_for('static', filename = 'assets/css/app.css')}}">-->
+<!--        <link rel="stylesheet" type="text/css" href="https://unpkg.com/nprogress@0.2.0/nprogress.css">-->
+
+<!--        &lt;!&ndash; JS &ndash;&gt;-->
+<!--        <script src="{{url_for('static', filename = 'assets/js/jquery-3.3.1.min.js')}}"></script>-->
+<!--        <script src="{{url_for('static', filename = 'assets/js/popper.min.js')}}"></script>-->
+<!--        <script src="{{url_for('static', filename = 'assets/js/bootstrap.min.js')}}"></script>-->
+<!--        <script src="{{url_for('static', filename = 'assets/js/app.js')}}"></script>-->
+<!--        <script src="https://unpkg.com/nprogress@0.2.0/nprogress.js"></script>-->
+<!--{#        <script src="https://unpkg.com/nprogress@0.2.0/nprogress.css"></script>#}-->
+<!--{#        <script src="https://unpkg.com/nprogress@0.2.0/nprogress.js"></script>#}-->
+<!--        <style>-->
+<!--        .not-allow {-->
+<!--            pointer-events: none;-->
+
+<!--        }-->
+<!--        .previous {-->
+<!--          background-color: #f1f1f1;-->
+<!--          color: black;-->
+<!--        }-->
+
+<!--        </style>-->
+<!--</head>-->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no" />
+    <title>Arvo</title>
+    <link rel="shortcut icon" href="{{url_for('static', filename = 'assets/images/favicon.png')}}">
+
+    <!-- CSS -->
+
+        <link rel="stylesheet" href="{{url_for('static', filename = 'assets/css/bootstrap.min.css')}}">
+        <link href="{{url_for('static', filename = 'assets/plugins/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet">
+        <link href="{{url_for('static', filename = 'assets/plugins/feather-icons/feather.css')}}" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="{{url_for('static', filename = 'assets/css/app.css')}}">
+
+
+    <!-- JS -->
+        <script src="{{url_for('static', filename = 'assets/js/jquery-3.3.1.min.js')}}"></script>
+        <script src="{{url_for('static', filename = 'assets/js/popper.min.js')}}"></script>
+        <script src="{{url_for('static', filename = 'assets/js/bootstrap.min.js')}}"></script>
+        <script src="{{url_for('static', filename = 'assets/js/app.js')}}"></script>
+</head>
+
+
+        {% block body %}
+
+        {% endblock body %}
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <hr>
+    <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/1.5.1/js/dataTables.buttons.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/select/1.2.5/js/dataTables.select.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://editor.datatables.net/extensions/Editor/js/dataTables.editor.min.js"></script>
+
+
+</html>

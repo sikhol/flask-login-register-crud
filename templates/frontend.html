@@ -1,0 +1,128 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+<body>
+<div class="app">
+    <div class="row h-100">
+        <div class="col-md-auto px-5 py-4 p-md-5">
+            <a href="#" class="logo"><img src="assets/images/logo.svg" alt=""></a>
+        </div>
+
+        <div class="col-md px-5 py-4 p-md-5">
+            <div class="heading row align-items-center mt-lg-5 mb-4">
+                <div class="col-md mb-4 mb-md-0">
+
+                    <h2 class="m-0">Selamat Datang, Papa Smurf</h2>
+                </div>
+
+                <div class="col-md-auto">
+        <a href="{{ url_for('.profile') }}" class="btn btn-action py-2 px-5 rounded-pill" style="background-color:var(--accent-hover-color)">
+          <span class="glyphicon glyphicon-user"><i class="fa fa-user"></i></span> User
+        </a>
+                </div>
+            </div>
+            <div class="heading row align-items-center mt-lg-2 mb-2" >
+                <div class="col-md mb-4 mb-md-0">
+
+                </div>
+
+                <div class="col-md-auto" >
+
+                    <a href="{{ url_for('.logout') }}" class="btn btn-action py-2 px-5 rounded-pill">Keluar</a>
+                </div>
+            </div>
+            {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+            {% for category, message in messages %}
+            <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                <span>{{ message }}</span>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+            <div class="mb-4">
+                <a href="{{ url_for('.create') }}"><button class="btn px-0 text-decoration-none text-secondary font-weight-normal" >
+                    <span class="btn btn-fab btn-accent mr-3"><i class="fa fa-plus"></i></span>
+                    Tambah Data
+                </button></a>
+            </div>
+            <div class="table-responsive">
+
+                <table id="myTable" class="table table-hover table-striped" style="width:100%" >
+                    <thead>
+                      <tr>
+                    <th>Nama Barang</th>
+                    <th>Berat Barang</th>
+                    <th>Jenis Barang</th>
+                    <th>Harga Beli</th>
+                    <th>Harga Jual</th>
+                    <th>Stok</th>
+                    <th>edit</th>
+                    <th>delete</th>
+                  </tr>
+                </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<audio id="audio">
+        <source src="" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+
+
+
+
+<script>
+$(document).ready(function() {
+    $('#myTable').DataTable( {
+        "processing": true,
+        "serverSide": true,
+        "ajax": {url: "/page_test",
+                dataSrc: ""
+        },
+
+
+        // add column definitions to map your json to the table
+        "columns": [
+            {data: "nama_barang"},
+            {data: "berat"},
+            {data: "jenis_barang"},
+            {data: "harga_beli"},
+            {data: "harga_jual"},
+            {data: "stok"},
+            {'data': null, title: 'Action', wrap: true, "render": function (item) { return '<div class="btn-group"> <a href="/update/' + item.id + '"><button type="button" onclick="set_value(' + item.id + ')" value="0" class="btn btn-warning" data-toggle="modal" data-target="#myModal">View</button></a></div>' } },
+            {'data': null, title: 'Action', wrap: true, "render": function (item) { return '<div class="btn-group"> <a href="/delete/' + item.id + '"><button type="button" onclick="set_value(' + item.id + ')" value="0" class="btn btn-danger" data-toggle="modal" data-target="#myModal">Delete</button></a></div>' } },
+
+        ]
+    } );
+});
+     $('.btn-play').on('click', function(e) {
+        e.preventDefault()
+        $('.btn-play').each(function() {
+            $(this).children('img').attr('src', '{{url_for('static', filename = 'assets/images/icon/ic-play.svg')}}')
+        })
+        const icon = $(this).children('img')
+        icon.attr('src', '{{url_for('static', filename = 'assets/images/icon/ic-pause-blue.svg')}}')
+            var src = $(this).data('src');
+        var target = $('#audio');
+        $(this).addClass('active');
+        $(target)[0].src = src;
+
+        $(target)[0].play();
+
+        $(target)[0].onended = function() {
+        $('.btn-play');
+        $('.btn-pause').attr('src','{{url_for('static', filename = 'assets/images/icon/ic-play.svg')}}');
+
+          };
+    })
+</script>
+</body>
+ {% endblock body %}
